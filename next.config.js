@@ -1,28 +1,27 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === 'production';
-const basePath = isProd ? '/portfolio' : '';
-
 const nextConfig = {
-  output: 'export',
-  distDir: 'docs',
-  trailingSlash: true,
-  basePath: basePath,
-  assetPrefix: basePath ? `${basePath}/` : '',
-  
-  // Disable image optimization since we're using static export
-  images: {
-    unoptimized: true,
-    path: basePath ? `${basePath}/_next/image` : '/_next/image',
-  },
-  
-  // Ensure static files are properly linked
-  skipTrailingSlashRedirect: true,
-  skipMiddlewareUrlNormalize: true,
+  // Enable React Strict Mode
   reactStrictMode: true,
   
+  // Enable static export for Vercel
+  output: 'standalone',
+  
+  // Image optimization with Vercel's Image Optimization
+  images: {
+    domains: ['images.unsplash.com', 'vercel.com'], // Add your image domains here
+    formats: ['image/avif', 'image/webp'],
+  },
+  
+  // Enable Webpack 5
+  webpack5: true,
+  
   // Add custom webpack config to handle static assets
-  webpack: (config) => {
+  webpack: (config, { isServer }) => {
     // This ensures that public assets are correctly referenced
+    if (!isServer) {
+      config.output.publicPath = basePath ? `${basePath}/_next/` : '/_next/';
+    }
+    
     config.module.rules.push({
       test: /\.(png|jpg|jpeg|gif|svg)$/i,
       type: 'asset/resource',
@@ -33,6 +32,11 @@ const nextConfig = {
     });
     
     return config;
+  },
+  
+  // Environment variables
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath || '',
   },
   
   // Add custom headers for GitHub Pages

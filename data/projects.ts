@@ -16,6 +16,8 @@ export interface Project {
     images?: string[];
 }
 
+import { getImagePath } from '@/lib/image-utils';
+
 export const projects: Project[] = [
     {
         id: "vishma-pos",
@@ -23,18 +25,18 @@ export const projects: Project[] = [
         type: "Mini Mart Inventory, Billing & POS System",
         featured: true,
         images: [
-            "/images/Vishma/Screenshot (8).png",
-            "/images/Vishma/Screenshot (9).png",
-            "/images/Vishma/Screenshot (10).png",
-            "/images/Vishma/Screenshot (11).png",
-            "/images/Vishma/Screenshot (12).png",
-            "/images/Vishma/Screenshot (13).png",
-            "/images/Vishma/Screenshot (14).png",
-            "/images/Vishma/Screenshot (15).png",
-            "/images/Vishma/Screenshot (16).png",
-            "/images/Vishma/Screenshot (17).png",
-            "/images/Vishma/Screenshot (18).png",
-            "/images/Vishma/Screenshot (19).png"
+            getImagePath("/images/Vishma/Screenshot (8).png"),
+            getImagePath("/images/Vishma/Screenshot (9).png"),
+            getImagePath("/images/Vishma/Screenshot (10).png"),
+            getImagePath("/images/Vishma/Screenshot (11).png"),
+            getImagePath("/images/Vishma/Screenshot (12).png"),
+            getImagePath("/images/Vishma/Screenshot (13).png"),
+            getImagePath("/images/Vishma/Screenshot (14).png"),
+            getImagePath("/images/Vishma/Screenshot (15).png"),
+            getImagePath("/images/Vishma/Screenshot (16).png"),
+            getImagePath("/images/Vishma/Screenshot (17).png"),
+            getImagePath("/images/Vishma/Screenshot (18).png"),
+            getImagePath("/images/Vishma/Screenshot (19).png")
         ],
         description:
             "A modern POS system with real-time inventory tracking, fast billing workflows, and secure backend APIs built for mini-mart retail operations.",
@@ -65,17 +67,17 @@ export const projects: Project[] = [
         type: "Mobile & Backend Application",
         featured: true,
         images: [
-            "/images/Sahara/a.png",
-            "/images/Sahara/b.png",
-            "/images/Sahara/c.png",
-            "/images/Sahara/d.png",
-            "/images/Sahara/e.png",
-            "/images/Sahara/f.png",
-            "/images/Sahara/g.png",
-            "/images/Sahara/h.png",
-            "/images/Sahara/i.png",
-            "/images/Sahara/j.png",
-            "/images/Sahara/k.png"
+            getImagePath("/images/Sahara/a.png"),
+            getImagePath("/images/Sahara/b.png"),
+            getImagePath("/images/Sahara/c.png"),
+            getImagePath("/images/Sahara/d.png"),
+            getImagePath("/images/Sahara/e.png"),
+            getImagePath("/images/Sahara/f.png"),
+            getImagePath("/images/Sahara/g.png"),
+            getImagePath("/images/Sahara/h.png"),
+            getImagePath("/images/Sahara/i.png"),
+            getImagePath("/images/Sahara/j.png"),
+            getImagePath("/images/Sahara/k.png")
         ],
         description:
             "A mobile-first disaster reporting and community alert system for real-time incident tracking and notifications.",
@@ -105,8 +107,8 @@ export const projects: Project[] = [
         type: "Ecommerce Web Application",
         featured: true,
         images: [
-            "/images/Book/Screenshot (27).png",
-            "/images/Book/Screenshot (28).png"
+            getImagePath("/images/Book/Screenshot (27).png"),
+            getImagePath("/images/Book/Screenshot (28).png")
         ],
         description:
             "A full-featured ecommerce system for managing book sales, inventory, and customer orders.",
@@ -136,10 +138,10 @@ export const projects: Project[] = [
         type: "Web-Based ERP System",
         featured: false,
         images: [
-            "/images/Gym/Screenshot (22).png",
-            "/images/Gym/Screenshot (23).png",
-            "/images/Gym/Screenshot (24).png",
-            "/images/Gym/Screenshot (25).png"
+            getImagePath("/images/Gym/Screenshot (22).png"),
+            getImagePath("/images/Gym/Screenshot (23).png"),
+            getImagePath("/images/Gym/Screenshot (24).png"),
+            getImagePath("/images/Gym/Screenshot (25).png")
         ],
         description:
             "An ERP-style system for managing gym memberships, billing, schedules, and member tracking.",
@@ -169,8 +171,8 @@ export const projects: Project[] = [
         type: "Mobile Game Application",
         featured: false,
         images: [
-            "/images/Jhandi Burja/Screenshot (20).png",
-            "/images/Jhandi Burja/Screenshot (21).png"
+            getImagePath("/images/Jhandi Burja/Screenshot (20).png"),
+            getImagePath("/images/Jhandi Burja/Screenshot (21).png")
         ],
         description:
             "An interactive, responsive web-based version of the traditional Nepali dice game with betting mechanics.",

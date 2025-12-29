@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
 import { cn } from "@/lib/utils";
+import { getImagePath } from "@/lib/image-utils";
 
 // Add this to your global CSS file (globals.css)
 /*
@@ -211,7 +212,7 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                                                     onClick={() => setCurrentImageIndex(index)}
                                                 >
                                                     <Image
-                                                        src={image}
+                                                        src={getImagePath(image)}
                                                         alt={`${project.name} screenshot ${index + 1}`}
                                                         fill
                                                         className="object-cover hover:scale-105 transition-transform duration-300"
@@ -233,11 +234,12 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                                     <div className="relative w-full h-64 md:h-[500px] bg-muted/50 overflow-hidden">
                                         <div className="absolute inset-0 flex items-center justify-center">
                                             <Image
-                                                src={project.images[currentImageIndex]}
+                                                src={getImagePath(project.images[currentImageIndex])}
                                                 alt={`${project.name} screenshot ${currentImageIndex + 1}`}
                                                 fill
                                                 className="object-contain"
                                                 priority
+                                                sizes="(max-width: 768px) 100vw, 80vw"
                                             />
                                         </div>
 

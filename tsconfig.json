@@ -18,7 +18,9 @@
     "jsx": "preserve",
     "incremental": true,
     "jsxImportSource": "react",
-    "types": ["node"],
+    "types": [
+      "node"
+    ],
     "plugins": [
       {
         "name": "next"
@@ -36,7 +38,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "**/*.mts",
+    "docs/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
